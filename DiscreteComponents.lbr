@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE eagle SYSTEM "eagle.dtd">
-<eagle version="7.4.0">
+<eagle version="7.5.0">
 <drawing>
 <settings>
 <setting alwaysvectorfont="no"/>
 <setting verticaltext="up"/>
 </settings>
-<grid distance="0.01" unitdist="mm" unit="mm" style="lines" multiple="1" display="yes" altdistance="0.025" altunitdist="inch" altunit="inch"/>
+<grid distance="0.1" unitdist="inch" unit="inch" style="lines" multiple="1" display="no" altdistance="0.01" altunitdist="inch" altunit="inch"/>
 <layers>
 <layer number="1" name="Top" color="4" fill="1" visible="yes" active="yes"/>
 <layer number="16" name="Bottom" color="1" fill="1" visible="yes" active="yes"/>
@@ -3921,6 +3921,19 @@ Source: http://www.murata.com .. GRM43DR72E224KW01.pdf</description>
 <text x="-1.6" y="2.2" size="0.6096" layer="25">&gt;NAME</text>
 <text x="-1.6" y="-2.8" size="0.6096" layer="27">&gt;VALUE</text>
 </package>
+<package name="SOT-23-BSN20">
+<wire x1="1.4224" y1="-0.381" x2="-1.4732" y2="-0.381" width="0.1524" layer="21"/>
+<wire x1="-1.4732" y1="-0.381" x2="-1.4732" y2="0.381" width="0.1524" layer="21"/>
+<wire x1="-1.4732" y1="0.381" x2="1.4224" y2="0.381" width="0.1524" layer="21"/>
+<wire x1="1.4224" y1="0.381" x2="1.4224" y2="-0.381" width="0.1524" layer="21"/>
+<rectangle x1="-1.1684" y1="-0.9398" x2="-0.7874" y2="-0.4318" layer="51" rot="R180"/>
+<rectangle x1="0.762" y1="-0.9398" x2="1.143" y2="-0.4318" layer="51" rot="R180"/>
+<rectangle x1="-0.2032" y1="0.4318" x2="0.1778" y2="0.9398" layer="51" rot="R180"/>
+<smd name="1" x="0" y="1" dx="0.8" dy="0.9" layer="1" rot="R180"/>
+<smd name="2" x="0.95" y="-1" dx="0.8" dy="0.9" layer="1" rot="R180"/>
+<smd name="3" x="-0.95" y="-1" dx="0.8" dy="0.9" layer="1" rot="R180"/>
+<text x="-1.397" y="1.778" size="1.27" layer="27" ratio="10">&gt;VALUE</text>
+</package>
 </packages>
 <symbols>
 <symbol name="FAN5109B">
@@ -4282,6 +4295,33 @@ http://www.digikey.com/product-detail/en/SSM3J328R,LF/SSM3J328RLFCT-ND/2753207</
 <rectangle x1="-3.81" y1="-1.27" x2="3.81" y2="1.27" layer="94"/>
 <pin name="1" x="-5.08" y="0" visible="off" length="short" direction="pas" swaplevel="1"/>
 <pin name="2" x="5.08" y="0" visible="off" length="short" direction="pas" swaplevel="1" rot="R180"/>
+</symbol>
+<symbol name="BSN20">
+<wire x1="-6.35" y1="0" x2="0.762" y2="0" width="0.254" layer="94"/>
+<rectangle x1="-6.35" y1="-2.032" x2="-4.826" y2="-1.016" layer="94"/>
+<rectangle x1="-0.762" y1="-2.032" x2="0.762" y2="-1.016" layer="94"/>
+<rectangle x1="-4.064" y1="-2.032" x2="-1.524" y2="-1.016" layer="94"/>
+<polygon width="0.254" layer="94">
+<vertex x="-2.794" y="-2.032"/>
+<vertex x="-2.032" y="-3.302"/>
+<vertex x="-3.556" y="-3.302"/>
+</polygon>
+<wire x1="-2.794" y1="-3.302" x2="-2.794" y2="-5.08" width="0.254" layer="94"/>
+<wire x1="-2.794" y1="-5.08" x2="-5.588" y2="-5.08" width="0.254" layer="94"/>
+<wire x1="-5.588" y1="-2.032" x2="-5.588" y2="-5.08" width="0.254" layer="94"/>
+<wire x1="0" y1="-2.032" x2="0" y2="-5.08" width="0.254" layer="94"/>
+<wire x1="0" y1="-5.08" x2="-2.794" y2="-5.08" width="0.254" layer="94"/>
+<circle x="-5.588" y="-5.08" radius="0.254" width="0.254" layer="94"/>
+<circle x="0" y="-5.08" radius="0.254" width="0.254" layer="94"/>
+<polygon width="0.254" layer="94">
+<vertex x="-2.032" y="-4.572"/>
+<vertex x="-2.032" y="-5.588"/>
+<vertex x="-1.016" y="-5.08"/>
+</polygon>
+<wire x1="-1.016" y1="-4.318" x2="-1.016" y2="-5.842" width="0.254" layer="94"/>
+<pin name="S" x="-10.16" y="-5.08" visible="pad" length="middle"/>
+<pin name="G" x="-2.54" y="5.08" visible="pad" length="middle" rot="R270"/>
+<pin name="D" x="5.08" y="-5.08" visible="pad" length="middle" rot="R180"/>
 </symbol>
 </symbols>
 <devicesets>
@@ -6251,6 +6291,23 @@ http://www.ussensor.com/sites/default/files/downloads/TO502J2J.pdf</description>
 <connects>
 <connect gate="G$1" pin="D" pad="1"/>
 <connect gate="G$1" pin="G" pad="2"/>
+<connect gate="G$1" pin="S" pad="3"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
+<deviceset name="BSN20">
+<gates>
+<gate name="G$1" symbol="BSN20" x="2.54" y="2.54"/>
+</gates>
+<devices>
+<device name="" package="SOT-23-BSN20">
+<connects>
+<connect gate="G$1" pin="D" pad="2"/>
+<connect gate="G$1" pin="G" pad="1"/>
 <connect gate="G$1" pin="S" pad="3"/>
 </connects>
 <technologies>
