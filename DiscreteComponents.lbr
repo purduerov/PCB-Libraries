@@ -6,7 +6,7 @@
 <setting alwaysvectorfont="no"/>
 <setting verticaltext="up"/>
 </settings>
-<grid distance="0.1" unitdist="inch" unit="inch" style="lines" multiple="1" display="no" altdistance="0.01" altunitdist="inch" altunit="inch"/>
+<grid distance="1" unitdist="mm" unit="mm" style="lines" multiple="1" display="yes" altdistance="0.01" altunitdist="mm" altunit="mm"/>
 <layers>
 <layer number="1" name="Top" color="4" fill="1" visible="yes" active="yes"/>
 <layer number="16" name="Bottom" color="1" fill="1" visible="yes" active="yes"/>
@@ -3921,7 +3921,7 @@ Source: http://www.murata.com .. GRM43DR72E224KW01.pdf</description>
 <text x="-1.6" y="2.2" size="0.6096" layer="25">&gt;NAME</text>
 <text x="-1.6" y="-2.8" size="0.6096" layer="27">&gt;VALUE</text>
 </package>
-<package name="SOT-23-BSN20">
+<package name="SOT-23-BSS138">
 <wire x1="1.4224" y1="-0.381" x2="-1.4732" y2="-0.381" width="0.1524" layer="21"/>
 <wire x1="-1.4732" y1="-0.381" x2="-1.4732" y2="0.381" width="0.1524" layer="21"/>
 <wire x1="-1.4732" y1="0.381" x2="1.4224" y2="0.381" width="0.1524" layer="21"/>
@@ -3929,9 +3929,9 @@ Source: http://www.murata.com .. GRM43DR72E224KW01.pdf</description>
 <rectangle x1="-1.1684" y1="-0.9398" x2="-0.7874" y2="-0.4318" layer="51" rot="R180"/>
 <rectangle x1="0.762" y1="-0.9398" x2="1.143" y2="-0.4318" layer="51" rot="R180"/>
 <rectangle x1="-0.2032" y1="0.4318" x2="0.1778" y2="0.9398" layer="51" rot="R180"/>
-<smd name="1" x="0" y="1" dx="0.8" dy="0.9" layer="1" rot="R180"/>
-<smd name="2" x="0.95" y="-1" dx="0.8" dy="0.9" layer="1" rot="R180"/>
-<smd name="3" x="-0.95" y="-1" dx="0.8" dy="0.9" layer="1" rot="R180"/>
+<smd name="1" x="0" y="1.1" dx="1" dy="1.4" layer="1" rot="R180"/>
+<smd name="2" x="0.95" y="-1.1" dx="1" dy="1.4" layer="1" rot="R180"/>
+<smd name="3" x="-0.95" y="-1.1" dx="1" dy="1.4" layer="1" rot="R180"/>
 <text x="-1.397" y="1.778" size="1.27" layer="27" ratio="10">&gt;VALUE</text>
 </package>
 </packages>
@@ -4296,7 +4296,7 @@ http://www.digikey.com/product-detail/en/SSM3J328R,LF/SSM3J328RLFCT-ND/2753207</
 <pin name="1" x="-5.08" y="0" visible="off" length="short" direction="pas" swaplevel="1"/>
 <pin name="2" x="5.08" y="0" visible="off" length="short" direction="pas" swaplevel="1" rot="R180"/>
 </symbol>
-<symbol name="BSN20">
+<symbol name="BSS138">
 <wire x1="-6.35" y1="0" x2="0.762" y2="0" width="0.254" layer="94"/>
 <rectangle x1="-6.35" y1="-2.032" x2="-4.826" y2="-1.016" layer="94"/>
 <rectangle x1="-0.762" y1="-2.032" x2="0.762" y2="-1.016" layer="94"/>
@@ -6299,12 +6299,13 @@ http://www.ussensor.com/sites/default/files/downloads/TO502J2J.pdf</description>
 </device>
 </devices>
 </deviceset>
-<deviceset name="BSN20">
+<deviceset name="BSS138">
+<description>n-channel mosfet</description>
 <gates>
-<gate name="G$1" symbol="BSN20" x="2.54" y="2.54"/>
+<gate name="G$1" symbol="BSS138" x="2.54" y="2.54"/>
 </gates>
 <devices>
-<device name="" package="SOT-23-BSN20">
+<device name="" package="SOT-23-BSS138">
 <connects>
 <connect gate="G$1" pin="D" pad="2"/>
 <connect gate="G$1" pin="G" pad="1"/>
