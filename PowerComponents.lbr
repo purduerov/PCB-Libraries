@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE eagle SYSTEM "eagle.dtd">
-<eagle version="7.5.0">
+<eagle version="7.4.0">
 <drawing>
 <settings>
 <setting alwaysvectorfont="no"/>
@@ -315,6 +315,16 @@ Height: 7.70mm</description>
 <text x="-2.5" y="0" size="1.016" layer="25">&gt;NAME</text>
 <text x="-2.5" y="-1.5" size="1.016" layer="27">&gt;VALUE</text>
 </package>
+<package name="CTAN(7.30_4.30MM)">
+<smd name="+" x="-2.57" y="0" dx="2.77" dy="2.55" layer="1"/>
+<wire x1="-3.65" y1="2.15" x2="3.65" y2="2.15" width="0.127" layer="20"/>
+<wire x1="3.65" y1="-2.15" x2="-3.65" y2="-2.15" width="0.127" layer="20"/>
+<smd name="-" x="2.57" y="0" dx="2.77" dy="2.55" layer="1"/>
+<wire x1="-3.65" y1="2.15" x2="-3.65" y2="1.275" width="0.127" layer="20"/>
+<wire x1="-3.65" y1="-1.275" x2="-3.65" y2="-2.15" width="0.127" layer="20"/>
+<wire x1="3.65" y1="-2.15" x2="3.65" y2="-1.275" width="0.127" layer="20"/>
+<wire x1="3.65" y1="1.275" x2="3.65" y2="2.15" width="0.127" layer="20"/>
+</package>
 </packages>
 <symbols>
 <symbol name="SWITCHMODE_SCHOTTKY">
@@ -597,6 +607,22 @@ Intermediate DC-DC Bus Converter</description>
 <connect gate="G$1" pin="GND" pad="GND"/>
 <connect gate="G$1" pin="VIN" pad="VIN"/>
 <connect gate="G$1" pin="VOUT" pad="TAB VOUT"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
+<deviceset name="C-TANTALUM(10UF_150UF)" prefix="C">
+<gates>
+<gate name="G$1" symbol="CPOL-US" x="0" y="0"/>
+</gates>
+<devices>
+<device name="" package="CTAN(7.30_4.30MM)">
+<connects>
+<connect gate="G$1" pin="+" pad="+"/>
+<connect gate="G$1" pin="-" pad="-"/>
 </connects>
 <technologies>
 <technology name=""/>
